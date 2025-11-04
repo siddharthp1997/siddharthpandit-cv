@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>PROJECT TITLE · Siddharth Pandit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Project by Siddharth Pandit — Data / ML / Analytics Engineering." />
+
+    <!-- Dimension core theme (absolute paths so it works from subfolders) -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+
+    <style>
+      body { background: #0e0f14; color: #eaeaea; }
+      main { max-width: 900px; margin: 4rem auto; padding: 0 1.2rem 5rem; line-height: 1.6; }
+      header h1 { font-size: clamp(2rem, 4vw, 2.6rem); margin-bottom: 0.5rem; }
+      header p.meta { opacity: 0.8; font-size: 1rem; margin-bottom: 2rem; }
+      section { margin-bottom: 3.5rem; }
+      h2 { font-size: 1.4rem; margin-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.4rem; }
+      .panel { border:1px solid rgba(255,255,255,0.08); border-radius:.6rem; padding:1.2rem; background:rgba(255,255,255,0.02); }
+      .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:.75rem; margin-top:1rem; }
+      .gallery img { width:100%; height:auto; border-radius:.6rem; border:1px solid rgba(255,255,255,.08); }
+      .actions { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1rem; }
+      .button { background:#1a1f2f; border:1px solid #2a3045; border-radius:8px; padding:.5rem 1rem; text-decoration:none; color:#fff; }
+      .button.primary { border-color:#6ee7b7; color:#6ee7b7; }
+      footer { text-align:center; opacity:.7; margin-top:3rem; font-size:.9rem; }
+    </style>
+  </head>
+  <body>
+    <header style="text-align:center; margin-top:4rem;">
+      <div class="logo" style="font-size:3rem; color:#6ee7b7;">
+        <span class="icon solid fa-folder-open"></span>
+      </div>
+      <h1>PROJECT TITLE</h1>
+      <p class="meta">One-sentence description of the project.</p>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <div class="panel">
+          <p>
+            Short paragraph describing what the project does, technologies used,
+            and what results it achieved. For example:
+            <br><br>
+            “Built an end-to-end data platform with automated ETL (Airflow + dbt),
+            dashboards (Metabase), and scalable infrastructure using Docker & AWS.”
+          </p>
+        </div>
+      </section>
+
+      <section id="screenshots">
+        <h2>Screenshots</h2>
+        <div class="panel">
+          <div id="gallery" class="gallery"></div>
+          <p style="opacity:.8;margin-top:.5rem">
+            Place screenshots at <code>/images/PROJECT_SLUG/1.jpg</code>, <code>2.jpg</code>, etc.
+          </p>
+        </div>
+      </section>
+
+      <section id="links">
+        <h2>Links</h2>
+        <div class="actions">
+          <a class="button primary" href="https://github.com/siddharthp1997/REPO_NAME" target="_blank" rel="noopener">GitHub Repo</a>
+          <a class="button" href="/">Home</a>
+          <a class="button" href="/Siddharth_Pandit.pdf" target="_blank" rel="noopener">Resume</a>
+          <!-- Optional: Live Demo link -->
+          <!-- <a class="button" href="https://demo.example.com" target="_blank" rel="noopener">Live Demo</a> -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; <script>document.write(new Date().getFullYear())</script> Siddharth Pandit. Built with <a href="https://html5up.net/dimension" target="_blank" rel="noopener">Dimension</a>.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+    <script>
+      // Auto-load screenshots from /images/PROJECT_SLUG/1.jpg..6.jpg
+      (function(){
+        const slug = 'PROJECT_SLUG';
+        const g = document.getElementById('gallery');
+        for(let i=1;i<=6;i++){
+          const img = new Image();
+          img.loading='lazy';
+          img.src = `/images/${slug}/${i}.jpg`;
+          img.alt = `${slug} screenshot ${i}`;
+          img.onerror = () => img.remove();
+          img.onload = () => g.appendChild(img);
+        }
+      })();
+    </script>
+  </body>
+</html>

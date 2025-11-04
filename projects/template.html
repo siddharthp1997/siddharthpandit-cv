@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>PROJECT TITLE · Siddharth Pandit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Dimension theme (absolute paths so it works from subfolders) -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+
+    <style>
+      /* Tiny page-specific helpers (optional) */
+      .panel{border:1px solid rgba(255,255,255,.08);border-radius:.6rem;padding:1rem}
+      .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem}
+      .gallery img{width:100%;height:auto;border-radius:.6rem;border:1px solid rgba(255,255,255,.08)}
+    </style>
+  </head>
+  <body class="is-preload">
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="logo" aria-hidden="true"><span class="icon solid fa-folder-open"></span></div>
+        <div class="content"><div class="inner">
+          <h1>PROJECT TITLE</h1>
+          <p class="meta">One-line description of the project.</p>
+        </div></div>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#shots">Screenshots</a></li>
+            <li><a href="#links">Links</a></li>
+            <li><a href="/#projects">← Back</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Main -->
+      <div id="main">
+        <article id="about">
+          <h2 class="major">About</h2>
+          <div class="panel">
+            <p>Short description: what it does, the stack, and the outcome. Keep it 2–4 sentences.</p>
+          </div>
+        </article>
+
+        <article id="shots">
+          <h2 class="major">Screenshots</h2>
+          <div class="panel">
+            <div id="gallery" class="gallery"></div>
+            <p style="opacity:.8;margin-top:.5rem">Put images in <code>/images/PROJECT_SLUG/1.jpg</code>, <code>2.jpg</code>, …</p>
+          </div>
+        </article>
+
+        <article id="links">
+          <h2 class="major">Links</h2>
+          <ul class="actions">
+            <li><a class="button primary" href="https://github.com/siddharthp1997/REPO_NAME" target="_blank" rel="noopener">GitHub Repo</a></li>
+            <li><a class="button" href="/">Home</a></li>
+            <li><a class="button" href="/Siddharth_Pandit.pdf" target="_blank" rel="noopener">Resume</a></li>
+            <!-- Optional extra link:
+            <li><a class="button" href="https://demo.example.com" target="_blank" rel="noopener">Live Demo</a></li>
+            -->
+          </ul>
+        </article>
+      </div>
+
+      <footer id="footer"><p class="copyright">
+        &copy; <script>document.write(new Date().getFullYear())</script> Siddharth Pandit.
+      </p></footer>
+    </div>
+
+    <!-- Background -->
+    <div id="bg"></div>
+
+    <!-- Scripts (Dimension) -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+    <!-- Minimal gallery loader: tries 1..6 images in /images/PROJECT_SLUG/ -->
+    <script>
+      (function(){
+        const slug = 'PROJECT_SLUG';      // e.g. 'air-quality-dashboard'
+        const g = document.getElementById('gallery');
+        const maxImages = 6;
+        for(let i=1;i<=maxImages;i++){
+          const img = new Image();
+          img.loading = 'lazy';
+          img.src = `/images/${slug}/${i}.jpg`;
+          img.alt = `${slug} screenshot ${i}`;
+          img.onerror = () => img.remove();
+          img.onload = () => g.appendChild(img);
+        }
+      })();
+    </script>
+  </body>
+</html>
