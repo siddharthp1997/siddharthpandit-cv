@@ -1,335 +1,94 @@
 <!DOCTYPE HTML>
-<!--
-  Customized "Dimension" by HTML5 UP for Siddharth Pandit
-  Uses original assets in /assets plus light inline overrides.
-  Place this file at repo root as index.html
-  Put your PDF at /Siddharth_Pandit.pdf (already uploaded)
--->
 <html>
   <head>
-    <title>Siddharth Pandit · Data/ML Engineer</title>
     <meta charset="utf-8" />
+    <title>PROJECT TITLE · Siddharth Pandit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Resume + portfolio of Siddharth Pandit — Data / ML / Analytics Engineering." />
-    <!-- HTML5 UP Dimension core styles -->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <!-- Light custom tweaks; safe even if you later add /assets/css/custom.css -->
+
+    <!-- Dimension theme (absolute paths so it works from subfolders) -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+
     <style>
-      :root {
-        --accent: #6ee7b7; /* teal */
-      }
-      /* Accent color on important bits */
-      .button.primary, .icon.solid.major { color: var(--accent); }
-      a { color: var(--accent); }
-      #header .logo svg { width: 2.35rem; height: 2.35rem; }
-      /* Make long bullet lists breathe a bit */
-      ul.tight > li { margin: 0.35rem 0; }
-      /* Project grid inside a panel */
-      .projects { display:grid; grid-template-columns: 1fr; gap: 1.25rem; }
-      @media (min-width: 800px) { .projects { grid-template-columns: repeat(2, 1fr); } }
-      .card { border: 1px solid rgba(255,255,255,.08); border-radius: 0.6rem; padding: 1.1rem 1.2rem; background: rgba(255,255,255,.02); }
-      .pills { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.6rem; }
-      .pill { font-size:.75rem; padding:.25rem .5rem; border:1px solid rgba(255,255,255,.15); border-radius:999px; opacity:.9 }
-      /* Resume embed responsive */
-      .embed { position: relative; padding-top: 130%; border: 1px solid rgba(255,255,255,.1); border-radius: .6rem; overflow:hidden; }
-      .embed iframe { position: absolute; top:0; left:0; width:100%; height:100%; }
-      /* Footer social icons bigger */
-      #footer .icons li a { font-size: 1.15rem; }
+      /* Tiny page-specific helpers (optional) */
+      .panel{border:1px solid rgba(255,255,255,.08);border-radius:.6rem;padding:1rem}
+      .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem}
+      .gallery img{width:100%;height:auto;border-radius:.6rem;border:1px solid rgba(255,255,255,.08)}
     </style>
   </head>
   <body class="is-preload">
-
-    <!-- Wrapper -->
     <div id="wrapper">
-
       <!-- Header -->
       <header id="header">
-        <div class="logo" aria-hidden="true">
-          <!-- Minimal monogram -->
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="8" width="48" height="48" rx="12" stroke="currentColor" stroke-width="4"/>
-            <path d="M20 44V20h10c6 0 10 3.8 10 9.5S36 39 30 39h-5v5H20Z" fill="currentColor"/>
-          </svg>
-        </div>
-        <div class="content">
-          <div class="inner">
-            <h1>Siddharth Pandit</h1>
-            <p>Data / ML / Analytics Engineering · AWS · Spark · Python · ETL · Dashboards</p>
-          </div>
-        </div>
+        <div class="logo" aria-hidden="true"><span class="icon solid fa-folder-open"></span></div>
+        <div class="content"><div class="inner">
+          <h1>PROJECT TITLE</h1>
+          <p class="meta">One-line description of the project.</p>
+        </div></div>
         <nav>
           <ul>
-            <li><a href="#intro">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#shots">Screenshots</a></li>
+            <li><a href="#links">Links</a></li>
+            <li><a href="/#projects">← Back</a></li>
           </ul>
         </nav>
       </header>
 
       <!-- Main -->
       <div id="main">
-
-        <!-- Intro -->
-        <article id="intro">
-          <h2 class="major">About</h2>
-          <!-- Replace images/pic01.jpg with your headshot if you add one; safe to leave empty -->
-          <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-          <p>
-            I’m a data/ML engineer focused on reliable ETL, scalable analytics platforms, and explainable ML systems. I enjoy turning messy, multi‑source data into decision‑ready products — from streaming ingestion and orchestration to model deployment and BI.
-          </p>
-          <p><em>Open to roles</em> across Data Engineering, Analytics Engineering, and ML Engineering.</p>
-          <ul class="actions">
-            <li><a href="#projects" class="button primary">Explore projects</a></li>
-            <li><a href="Siddharth_Pandit.pdf" target="_blank" class="button">Download resume</a></li>
-          </ul>
-        </article>
-
-        <!-- Experience -->
-        <article id="experience">
-          <h2 class="major">Experience</h2>
-          <section>
-            <h3>Backend Developer Intern (Full‑time) — Inficloud · Virginia, USA <span style="opacity:.6">(Jan 2024 – Jan 2025)</span></h3>
-            <ul class="tight">
-              <li>Built & maintained AWS‑based ETL pipelines processing 500GB+ monthly with robust data validation.</li>
-              <li>Supported Tableau/Power BI dashboards for faster trend identification and accurate reporting.</li>
-              <li>RESTful API integrations for live streams; documented endpoints and validated outputs.</li>
-              <li>Automations & production‑grade Python scripts, saving 200+ engineer hours annually.</li>
-            </ul>
-          </section>
-          <hr/>
-          <section>
-            <h3>Programmer — Aryagami Cloud Services · Hyderabad, India <span style="opacity:.6">(Jul 2021 – Jul 2022)</span></h3>
-            <ul class="tight">
-              <li>Co‑designed/operated backend for a SaaS analytics platform; optimized MySQL for reliability and speed.</li>
-              <li>Containerized services with Docker and simplified CI/CD.</li>
-              <li>Improved API latency by ~25% (400ms → 300ms) and added structured logging/monitoring.</li>
-            </ul>
-          </section>
-          <hr/>
-          <section>
-            <h3>Backend Developer Intern — Aryagami Cloud Services · Hyderabad, India <span style="opacity:.6">(Jun 2020 – Jul 2021)</span></h3>
-            <ul class="tight">
-              <li>Supported RESTful APIs contributing to 30% faster data retrieval for analytics dashboards.</li>
-              <li>Automated ETL transformations; reduced data prep time by 20%.</li>
-              <li>Deployed backend services on AWS/Docker; improved scalability and uptime.</li>
-            </ul>
-          </section>
-        </article>
-
-        <!-- Projects -->
-        <article id="projects">
-          <h2 class="major">Projects</h2>
-          <div class="projects">
-            <div class="card">
-              <h3>Air Quality Dashboard</h3>
-              <p>Real‑time AQI for India & USA via AQICN; MongoDB Atlas storage; Streamlit dashboard + on‑page map & charts.</p>
-              <div class="pills"><span class="pill">Python</span><span class="pill">AQICN API</span><span class="pill">MongoDB Atlas</span><span class="pill">Streamlit</span><span class="pill">GitHub Actions</span></div>
-              <ul class="actions">
-                <li><a class="button primary" href="projects/air-quality-dashboard/">Project page</a></li>
-                <li><a class="button" href="https://github.com/siddharthp1997/Air-Quality-Dashboard" target="_blank" rel="noopener">Source</a></li>
-                <li><a class="button" href="https://air-quality-dashboard-nbx2nvgermtrpweyadgjqh.streamlit.app" target="_blank" rel="noopener">Live demo</a></li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3>Credit Card Fraud Detection</h3>
-              <p>End‑to‑end fraud system with PySpark + AWS Glue; 92% recall, 90% F1. SHAP explainability, Airflow ETL, Power BI KPIs.</p>
-              <div class="pills"><span class="pill">PySpark</span><span class="pill">Databricks</span><span class="pill">AWS Glue</span><span class="pill">Airflow</span><span class="pill">Power BI</span></div>
-              <ul class="actions">
-                <li><a class="button primary" href="projects/fraud-detection/">Case study</a></li>
-                <li><a class="button" href="https://github.com/siddharthp1997" target="_blank" rel="noopener">Source</a></li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3>Collision Analysis — Manhattan</h3>
-              <p>Analyzed 20M+ NYC collisions; peak risk Thu–Fri, 14:00–16:00. Tableau dashboards, predictive hotspots.</p>
-              <div class="pills"><span class="pill">Python</span><span class="pill">Pandas</span><span class="pill">Tableau</span><span class="pill">Geo</span></div>
-              <ul class="actions">
-                <li><a class="button primary" href="projects/collision-analysis/">Deep dive</a></li>
-                <li><a class="button" href="https://github.com/siddharthp1997" target="_blank" rel="noopener">Source</a></li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3>Data Platform Starter</h3>
-              <p>Cookie‑cutter stack for ingestion → warehousing → BI. Airflow/DBT on Postgres + Metabase. IaC scaffolding included.</p>
-              <div class="pills"><span class="pill">Airflow</span><span class="pill">dbt</span><span class="pill">Postgres</span><span class="pill">Metabase</span><span class="pill">Docker</span></div>
-              <ul class="actions">
-                <li><a class="button primary" href="projects/data-platform-starter/">Overview</a></li>
-                <li><a class="button" href="https://github.com/siddharthp1997" target="_blank" rel="noopener">Source</a></li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3>Streaming ETL Demo</h3>
-              <p>Kafka → Spark Structured Streaming → S3 + Athena; CDC and schema evolution handled.</p>
-              <div class="pills"><span class="pill">Kafka</span><span class="pill">Spark</span><span class="pill">S3</span><span class="pill">Athena</span></div>
-              <ul class="actions">
-                <li><a class="button primary" href="projects/streaming-etl-demo/">Read more</a></li>
-                <li><a class="button" href="https://github.com/siddharthp1997" target="_blank" rel="noopener">Source</a></li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <!-- Skills -->
-        <article id="skills">
-          <h2 class="major">Skills</h2>
-          <div class="fields">
-            <div class="field">
-              <h3>Data & ML</h3>
-              <p>Python, PySpark, Pandas, scikit‑learn, SHAP, XGBoost, SQL, dbt</p>
-            </div>
-            <div class="field">
-              <h3>Platforms & Infra</h3>
-              <p>AWS (Glue, Athena, S3, Lambda, ECS), Databricks, Docker, Airflow</p>
-            </div>
-            <div class="field">
-              <h3>Analytics</h3>
-              <p>Power BI, Tableau, Metabase; metrics design, KPI dashboards</p>
-            </div>
-            <div class="field">
-              <h3>Ops</h3>
-              <p>CI/CD, testing, observability, documentation</p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Resume (embed) -->
-        <article id="resume">
-          <h2 class="major">Resume</h2>
-          <p>
-            Prefer a quick download? <a href="Siddharth_Pandit.pdf" target="_blank" rel="noopener">Open the PDF</a>.
-          </p>
-          <div class="embed">
-            <iframe title="Siddharth Pandit — Resume" src="Siddharth_Pandit.pdf"></iframe>
-          </div>
-        </article>
-
-        <!-- Contact -->
-        <article id="contact">
-          <h2 class="major">Contact</h2>
-          <p>Want to discuss a role or project? Email is best. Phone intentionally omitted.</p>
-          <ul class="contact">
-            <li><strong>Email:</strong> <a href="mailto:siddharthpandit@zohomail.in">siddharthpandit@zohomail.in</a></li>
-            <li><strong>GitHub:</strong> <a href="https://github.com/siddharthp1997" target="_blank" rel="noopener">siddharthp1997</a></li>
-          </ul>
-          <ul class="icons">
-            <li><a href="https://github.com/siddharthp1997" class="icon brands fa-github" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
-            <!-- Add LinkedIn later by replacing # with your URL
-            <li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li> -->
-          </ul>
-        </article>
-
-      </div>
-
-      <!-- Footer -->
-      <footer id="footer">
-        <p class="copyright">&copy; <span id="y"></span> Siddharth Pandit. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-      </footer>
-
-    </div>
-
-    <!-- BG -->
-    <div id="bg"></div>
-
-    <!-- Scripts (HTML5 UP) -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-      // Year stamp
-      document.getElementById('y').textContent = new Date().getFullYear();
-    </script>
-  </body>
-</html>
-
-<!-- =============================== -->
-<!-- Project Page Templates (copy to /projects/*/index.html) -->
-<!-- =============================== -->
-
-<!-- File: projects/_template.html -->
-<!-- Minimal project page template (Dimension theme). Copy to /projects/<slug>/index.html and fill in TITLE, DESCRIPTION, LINKS, and add screenshots to /images/<slug>/. -->
-<!--
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>PROJECT TITLE · Siddharth Pandit</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
-    <style>
-      .panel{border:1px solid rgba(255,255,255,.08);border-radius:.6rem;padding:1rem}
-      .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem}
-      .gallery img{width:100%;height:auto;border-radius:.6rem;border:1px solid rgba(255,255,255,.08)}
-    </style>
-  </head>
-  <body class="is-preload">
-    <div id="wrapper">
-      <header id="header">
-        <div class="logo" aria-hidden="true"><span class="icon solid fa-folder-open"></span></div>
-        <div class="content"><div class="inner">
-          <h1>PROJECT TITLE</h1>
-          <p class="meta">One‑sentence description.</p>
-        </div></div>
-        <nav>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#shots">Screenshots</a></li>
-            <li><a href="#links">Links</a></li>
-            <li><a href="/\#projects">← Back</a></li>
-          </ul>
-        </nav>
-      </header>
-
-      <div id="main">
         <article id="about">
           <h2 class="major">About</h2>
           <div class="panel">
-            <p>Short description of the project, problem, and outcome.</p>
+            <p>Short description: what it does, the stack, and the outcome. Keep it 2–4 sentences.</p>
           </div>
         </article>
 
         <article id="shots">
           <h2 class="major">Screenshots</h2>
           <div class="panel">
-            <div class="gallery" id="gallery"></div>
-            <p style="opacity:.8;margin-top:.5rem">Place images at <code>/images/PROJECT_SLUG/1.jpg</code>, <code>2.jpg</code>, …</p>
+            <div id="gallery" class="gallery"></div>
+            <p style="opacity:.8;margin-top:.5rem">Put images in <code>/images/PROJECT_SLUG/1.jpg</code>, <code>2.jpg</code>, …</p>
           </div>
         </article>
 
         <article id="links">
           <h2 class="major">Links</h2>
           <ul class="actions">
-            <li><a class="button primary" href="https://github.com/siddharthp1997" target="_blank" rel="noopener">GitHub Repo</a></li>
+            <li><a class="button primary" href="https://github.com/siddharthp1997/REPO_NAME" target="_blank" rel="noopener">GitHub Repo</a></li>
             <li><a class="button" href="/">Home</a></li>
             <li><a class="button" href="/Siddharth_Pandit.pdf" target="_blank" rel="noopener">Resume</a></li>
+            <!-- Optional extra link:
+            <li><a class="button" href="https://demo.example.com" target="_blank" rel="noopener">Live Demo</a></li>
+            -->
           </ul>
         </article>
       </div>
 
-      <footer id="footer"><p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Siddharth Pandit.</p></footer>
+      <footer id="footer"><p class="copyright">
+        &copy; <script>document.write(new Date().getFullYear())</script> Siddharth Pandit.
+      </p></footer>
     </div>
+
+    <!-- Background -->
     <div id="bg"></div>
 
+    <!-- Scripts (Dimension) -->
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/browser.min.js"></script>
     <script src="/assets/js/breakpoints.min.js"></script>
     <script src="/assets/js/util.js"></script>
     <script src="/assets/js/main.js"></script>
+
+    <!-- Minimal gallery loader: tries 1..6 images in /images/PROJECT_SLUG/ -->
     <script>
-      // Minimal gallery loader: attempts 1..6 images in /images/PROJECT_SLUG/
       (function(){
-        const slug = 'PROJECT_SLUG';
+        const slug = 'PROJECT_SLUG';      // e.g. 'air-quality-dashboard'
         const g = document.getElementById('gallery');
-        const tryN = 6;
-        for(let i=1;i<=tryN;i++){
+        const maxImages = 6;
+        for(let i=1;i<=maxImages;i++){
           const img = new Image();
-          img.loading='lazy';
+          img.loading = 'lazy';
           img.src = `/images/${slug}/${i}.jpg`;
           img.alt = `${slug} screenshot ${i}`;
           img.onerror = () => img.remove();
@@ -339,443 +98,3 @@
     </script>
   </body>
 </html>
--->
-
-<!-- File: projects/fraud-detection/index.html -->
-<!-- Minimal project page: heading, description, links, screenshots. -->
-<!--
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>Credit Card Fraud Detection · Siddharth Pandit</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
-    <style>
-      .panel{border:1px solid rgba(255,255,255,.08);border-radius:.6rem;padding:1rem}
-      .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem}
-      .gallery img{width:100%;height:auto;border-radius:.6rem;border:1px solid rgba(255,255,255,.08)}
-    </style>
-  </head>
-  <body class="is-preload">
-    <div id="wrapper">
-      <header id="header">
-        <div class="logo" aria-hidden="true"><span class="icon solid fa-shield-alt"></span></div>
-        <div class="content"><div class="inner">
-          <h1>Credit Card Fraud Detection</h1>
-          <p class="meta">End‑to‑end PySpark + AWS Glue pipeline with SHAP explainability and Airflow orchestration.</p>
-        </div></div>
-        <nav>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#shots">Screenshots</a></li>
-            <li><a href="#links">Links</a></li>
-            <li><a href="/\#projects">← Back</a></li>
-          </ul>
-        </nav>
-      </header>
-
-      <div id="main">
-        <article id="about">
-          <h2 class="major">About</h2>
-          <div class="panel">
-            <p>Detected high‑risk transactions with XGBoost on engineered Spark features. Achieved ~92% recall and 0.90 F1; reduced manual review by threshold tuning.</p>
-          </div>
-        </article>
-
-        <article id="shots">
-          <h2 class="major">Screenshots</h2>
-          <div class="panel"><div id="gallery" class="gallery"></div></div>
-        </article>
-
-        <article id="links">
-          <h2 class="major">Links</h2>
-          <ul class="actions">
-            <li><a class="button primary" href="https://github.com/siddharthp1997" target="_blank" rel="noopener">GitHub Repo</a></li>
-            <li><a class="button" href="/">Home</a></li>
-            <li><a class="button" href="/Siddharth_Pandit.pdf" target="_blank" rel="noopener">Resume</a></li>
-          </ul>
-        </article>
-      </div>
-
-      <footer id="footer"><p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Siddharth Pandit.</p></footer>
-    </div>
-    <div id="bg"></div>
-
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/browser.min.js"></script>
-    <script src="/assets/js/breakpoints.min.js"></script>
-    <script src="/assets/js/util.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script>
-      (function(){
-        const slug = 'fraud-detection';
-        const g = document.getElementById('gallery');
-        for(let i=1;i<=6;i++){
-          const img = new Image();
-          img.loading='lazy';
-          img.src = `/images/${slug}/${i}.jpg`;
-          img.alt = `${slug} screenshot ${i}`;
-          img.onerror = () => img.remove();
-          img.onload = () => g.appendChild(img);
-        }
-      })();
-    </script>
-  </body>
-</html>
--->
-
-<!-- File: projects/collision-analysis/index.html -->
-<!-- Minimal project page: heading, description, links, screenshots. -->
-<!--
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>Collision Analysis — Manhattan · Siddharth Pandit</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
-    <style>
-      .panel{border:1px solid rgba(255,255,255,.08);border-radius:.6rem;padding:1rem}
-      .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem}
-      .gallery img{width:100%;height:auto;border-radius:.6rem;border:1px solid rgba(255,255,255,.08)}
-    </style>
-  </head>
-  <body class="is-preload">
-    <div id="wrapper">
-      <header id="header">
-        <div class="logo" aria-hidden="true"><span class="icon solid fa-chart-line"></span></div>
-        <div class="content"><div class="inner">
-          <h1>Collision Analysis — Manhattan</h1>
-          <p class="meta">Exploratory + predictive analysis of NYC collisions; risk windows and hotspot mapping.</p>
-        </div></div>
-        <nav>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#shots">Screenshots</a></li>
-            <li><a href="#links">Links</a></li>
-            <li><a href="/\#projects">← Back</a></li>
-          </ul>
-        </nav>
-      </header>
-
-      <div id="main">
-        <article id="about">
-          <h2 class="major">About</h2>
-          <div class="panel">
-            <p>Processed 20M+ records, engineered temporal features, and visualized hotspots; insights informed targeted safety measures.</p>
-          </div>
-        </article>
-
-        <article id="shots">
-          <h2 class="major">Screenshots</h2>
-          <div class="panel"><div id="gallery" class="gallery"></div></div>
-        </article>
-
-        <article id="links">
-          <h2 class="major">Links</h2>
-          <ul class="actions">
-            <li><a class="button primary" href="https://github.com/siddharthp1997" target="_blank" rel="noopener">GitHub Repo</a></li>
-            <li><a class="button" href="/">Home</a></li>
-            <li><a class="button" href="/Siddharth_Pandit.pdf" target="_blank" rel="noopener">Resume</a></li>
-          </ul>
-        </article>
-      </div>
-
-      <footer id="footer"><p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Siddharth Pandit.</p></footer>
-    </div>
-    <div id="bg"></div>
-
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/browser.min.js"></script>
-    <script src="/assets/js/breakpoints.min.js"></script>
-    <script src="/assets/js/util.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script>
-      (function(){
-        const slug = 'collision-analysis';
-        const g = document.getElementById('gallery');
-        for(let i=1;i<=6;i++){
-          const img = new Image();
-          img.loading='lazy';
-          img.src = `/images/${slug}/${i}.jpg`;
-          img.alt = `${slug} screenshot ${i}`;
-          img.onerror = () => img.remove();
-          img.onload = () => g.appendChild(img);
-        }
-      })();
-    </script>
-  </body>
-</html>
--->
-
-<!-- File: projects/data-platform-starter/index.html -->
-<!-- Minimal project page: heading, description, links, screenshots. -->
-<!--
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>Data Platform Starter · Siddharth Pandit</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
-    <style>
-      .panel{border:1px solid rgba(255,255,255,.08);border-radius:.6rem;padding:1rem}
-      .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem}
-      .gallery img{width:100%;height:auto;border-radius:.6rem;border:1px solid rgba(255,255,255,.08)}
-    </style>
-  </head>
-  <body class="is-preload">
-    <div id="wrapper">
-      <header id="header">
-        <div class="logo" aria-hidden="true"><span class="icon solid fa-cubes"></span></div>
-        <div class="content"><div class="inner">
-          <h1>Data Platform Starter</h1>
-          <p class="meta">Cookie‑cutter ingestion → warehousing → BI stack with IaC and opinionated defaults.</p>
-        </div></div>
-        <nav>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#shots">Screenshots</a></li>
-            <li><a href="#links">Links</a></li>
-            <li><a href="/\#projects">← Back</a></li>
-          </ul>
-        </nav>
-      </header>
-
-      <div id="main">
-        <article id="about">
-          <h2 class="major">About</h2>
-          <div class="panel">
-            <p>Airflow for orchestration, dbt for models, Postgres warehouse, and Metabase for BI. Docker Compose for local dev.</p>
-          </div>
-        </article>
-
-        <article id="shots">
-          <h2 class="major">Screenshots</h2>
-          <div class="panel"><div id="gallery" class="gallery"></div></div>
-        </article>
-
-        <article id="links">
-          <h2 class="major">Links</h2>
-          <ul class="actions">
-            <li><a class="button primary" href="https://github.com/siddharthp1997" target="_blank" rel="noopener">GitHub Repo</a></li>
-            <li><a class="button" href="/">Home</a></li>
-            <li><a class="button" href="/Siddharth_Pandit.pdf" target="_blank" rel="noopener">Resume</a></li>
-          </ul>
-        </article>
-      </div>
-
-      <footer id="footer"><p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Siddharth Pandit.</p></footer>
-    </div>
-    <div id="bg"></div>
-
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/browser.min.js"></script>
-    <script src="/assets/js/breakpoints.min.js"></script>
-    <script src="/assets/js/util.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script>
-      (function(){
-        const slug = 'data-platform-starter';
-        const g = document.getElementById('gallery');
-        for(let i=1;i<=6;i++){
-          const img = new Image();
-          img.loading='lazy';
-          img.src = `/images/${slug}/${i}.jpg`;
-          img.alt = `${slug} screenshot ${i}`;
-          img.onerror = () => img.remove();
-          img.onload = () => g.appendChild(img);
-        }
-      })();
-    </script>
-  </body>
-</html>
--->
-
-<!-- File: projects/streaming-etl-demo/index.html -->
-<!-- Minimal project page: heading, description, links, screenshots. -->
-<!--
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>Streaming ETL Demo · Siddharth Pandit</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
-    <style>
-      .panel{border:1px solid rgba(255,255,255,.08);border-radius:.6rem;padding:1rem}
-      .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem}
-      .gallery img{width:100%;height:auto;border-radius:.6rem;border:1px solid rgba(255,255,255,.08)}
-    </style>
-  </head>
-  <body class="is-preload">
-    <div id="wrapper">
-      <header id="header">
-        <div class="logo" aria-hidden="true"><span class="icon solid fa-stream"></span></div>
-        <div class="content"><div class="inner">
-          <h1>Streaming ETL Demo</h1>
-          <p class="meta">Kafka → Spark Structured Streaming → S3 + Athena (CDC & schema evolution).</p>
-        </div></div>
-        <nav>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#shots">Screenshots</a></li>
-            <li><a href="#links">Links</a></li>
-            <li><a href="/\#projects">← Back</a></li>
-          </ul>
-        </nav>
-      </header>
-
-      <div id="main">
-        <article id="about">
-          <h2 class="major">About</h2>
-          <div class="panel">
-            <p>Near‑real‑time analytics with <em>P95 under 5 minutes</em>, checkpointed replay, and CDC merge into Parquet tables.</p>
-          </div>
-        </article>
-
-        <article id="shots">
-          <h2 class="major">Screenshots</h2>
-          <div class="panel"><div id="gallery" class="gallery"></div></div>
-        </article>
-
-        <article id="links">
-          <h2 class="major">Links</h2>
-          <ul class="actions">
-            <li><a class="button primary" href="https://github.com/siddharthp1997" target="_blank" rel="noopener">GitHub Repo</a></li>
-            <li><a class="button" href="/">Home</a></li>
-            <li><a class="button" href="/Siddharth_Pandit.pdf" target="_blank" rel="noopener">Resume</a></li>
-          </ul>
-        </article>
-      </div>
-
-      <footer id="footer"><p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Siddharth Pandit.</p></footer>
-    </div>
-    <div id="bg"></div>
-
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/browser.min.js"></script>
-    <script src="/assets/js/breakpoints.min.js"></script>
-    <script src="/assets/js/util.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script>
-      (function(){
-        const slug = 'streaming-etl-demo';
-        const g = document.getElementById('gallery');
-        for(let i=1;i<=6;i++){
-          const img = new Image();
-          img.loading='lazy';
-          img.src = `/images/${slug}/${i}.jpg`;
-          img.alt = `${slug} screenshot ${i}`;
-          img.onerror = () => img.remove();
-          img.onload = () => g.appendChild(img);
-        }
-      })();
-    </script>
-  </body>
-</html>
--->
-
-
-<!-- File: projects/air-quality-dashboard/index.html -->
-<!-- Minimal: heading, description, links, screenshots, and an embedded Streamlit demo. -->
-<!--
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>Air Quality Dashboard · Siddharth Pandit</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
-    <style>
-      .panel{border:1px solid rgba(255,255,255,.08);border-radius:.6rem;padding:1rem}
-      .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem}
-      .gallery img{width:100%;height:auto;border-radius:.6rem;border:1px solid rgba(255,255,255,.08)}
-      .embed{position:relative; padding-top:62.5%; border:1px solid rgba(255,255,255,.08); border-radius:.6rem; overflow:hidden}
-      .embed iframe{position:absolute; top:0; left:0; width:100%; height:100%; border:0}
-    </style>
-  </head>
-  <body class="is-preload">
-    <div id="wrapper">
-      <header id="header">
-        <div class="logo" aria-hidden="true"><span class="icon solid fa-wind"></span></div>
-        <div class="content"><div class="inner">
-          <h1>Air Quality Dashboard</h1>
-          <p class="meta">AQI for India & USA. Data via AQICN → stored in MongoDB Atlas → visualized with Streamlit.</p>
-        </div></div>
-        <nav>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#demo">Demo</a></li>
-            <li><a href="#shots">Screenshots</a></li>
-            <li><a href="#links">Links</a></li>
-            <li><a href="/\#projects">← Back</a></li>
-          </ul>
-        </nav>
-      </header>
-
-      <div id="main">
-        <article id="about">
-          <h2 class="major">About</h2>
-          <div class="panel">
-            <p>Fetches real‑time AQI, pollutants, and forecasts using AQICN; persists to MongoDB Atlas; Streamlit app renders maps and charts. GitHub Actions refreshes data regularly.</p>
-          </div>
-        </article>
-
-        <article id="demo">
-          <h2 class="major">Live Demo</h2>
-          <div class="embed">
-            <iframe title="Air Quality Dashboard (Streamlit)" src="https://air-quality-dashboard-nbx2nvgermtrpweyadgjqh.streamlit.app"></iframe>
-          </div>
-          <p style="opacity:.8;margin-top:.5rem">If the embed is blocked, <a target="_blank" rel="noopener" href="https://air-quality-dashboard-nbx2nvgermtrpweyadgjqh.streamlit.app">open in a new tab</a>.</p>
-        </article>
-
-        <article id="shots">
-          <h2 class="major">Screenshots</h2>
-          <div class="panel"><div id="gallery" class="gallery"></div></div>
-        </article>
-
-        <article id="links">
-          <h2 class="major">Links</h2>
-          <ul class="actions">
-            <li><a class="button primary" href="https://github.com/siddharthp1997/Air-Quality-Dashboard" target="_blank" rel="noopener">GitHub Repo</a></li>
-            <li><a class="button" href="/">Home</a></li>
-            <li><a class="button" href="/Siddharth_Pandit.pdf" target="_blank" rel="noopener">Resume</a></li>
-          </ul>
-        </article>
-      </div>
-
-      <footer id="footer"><p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Siddharth Pandit.</p></footer>
-    </div>
-    <div id="bg"></div>
-
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/browser.min.js"></script>
-    <script src="/assets/js/breakpoints.min.js"></script>
-    <script src="/assets/js/util.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script>
-      // load screenshots from /images/air-quality-dashboard/1.jpg..6.jpg (optional)
-      (function(){
-        const slug = 'air-quality-dashboard';
-        const g = document.getElementById('gallery');
-        const tryN = 6;
-        for(let i=1;i<=tryN;i++){
-          const img = new Image();
-          img.loading='lazy';
-          img.src = `/images/${slug}/${i}.jpg`;
-          img.alt = `${slug} screenshot ${i}`;
-          img.onerror = () => img.remove();
-          img.onload = () => g.appendChild(img);
-        }
-      })();
-    </script>
-  </body>
-</html>
--->
