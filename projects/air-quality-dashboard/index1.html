@@ -6,128 +6,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="description" content="Project by Siddharth Pandit — Data / ML / Analytics Engineering." />
 
-    <!-- Dimension theme (absolute paths so it works from subfolders) -->
+    <!-- Dimension theme (keeps look identical to home) -->
     <link rel="stylesheet" href="/assets/css/main.css" />
     <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
 
     <style>
-      :root{
-        --accent:#6ee7b7;
-        --panel:rgba(255,255,255,.03);
-        --panel-br:rgba(255,255,255,.12);
-        --btn-bg:rgba(255,255,255,.05);
-        --btn-br:rgba(255,255,255,.18);
-        --btn-bg-hover:rgba(255,255,255,.12);
-      }
+      :root { --accent:#6ee7b7; }
 
-      /* Layout (keeps Dimension look while using continuous scroll) */
-      #wrapper{ max-width: 960px; margin: 0 auto; padding: 5.5rem 1.25rem 6rem; }
-      header{ text-align:center; margin-bottom: 2.75rem; }
-      .logo{ font-size: 2.9rem; color: var(--accent); margin-bottom: .6rem; }
-      header h1{ font-size: clamp(2rem, 4vw, 2.6rem); margin: .25rem 0 .35rem; }
-      header p.meta{ opacity:.85; max-width: 760px; margin: 0 auto 1.2rem; }
+      /* Keep Dimension shell, but continuous scroll */
+      #wrapper{max-width:980px;margin:0 auto;padding:5rem 1.25rem 6rem;}
+      header{ text-align:center; margin-bottom:2.75rem; position:relative;}
+      header .logo{ font-size:3rem; color:var(--accent); margin-bottom:1rem; }
+      header h1{ letter-spacing:.25em; font-size:clamp(2rem,4vw,2.6rem); margin:0 0 .6rem; }
+      header .subtitle{ opacity:.8; letter-spacing:.25em; font-size:.9rem; margin:0 auto 1.8rem; }
 
-      /* Pill buttons */
-      .actions{ display:flex; flex-wrap:wrap; justify-content:center; gap:.75rem; margin-top:.9rem; }
-      .btn{
-        display:inline-flex; align-items:center; gap:.5rem;
-        padding:.6rem 1.05rem; border-radius:999px;
-        background:var(--btn-bg); border:1px solid var(--btn-br);
-        color:#fff; text-decoration:none; font-weight:700; letter-spacing:.06em; font-size:.88rem;
-        transition: background .2s, transform .02s, border-color .2s, box-shadow .2s;
+      /* Tabs style = match Dimension nav boxes */
+      .tabs{ display:flex; flex-wrap:wrap; justify-content:center; gap:.75rem; }
+      .tab{
+        display:inline-block;
+        padding:.7rem 1.1rem;
+        border:1px solid rgba(255,255,255,.35);
+        border-radius:.35rem;
+        text-decoration:none;
+        letter-spacing:.25em;
+        text-transform:uppercase;
+        font-size:.8rem;
+        color:#fff;
+        transition:transform .02s, background .2s, border-color .2s, color .2s;
       }
-      .btn:hover{ background:var(--btn-bg-hover); box-shadow:0 6px 18px rgba(0,0,0,.18); }
-      .btn:active{ transform: translateY(1px); }
-      .btn.primary{ color:var(--accent); border-color:var(--accent); }
-      .btn .icon{ font-size:1rem; line-height:1; }
+      .tab.primary{ color:var(--accent); border-color:var(--accent); }
+      .tab:hover{ background:rgba(255,255,255,.08); }
+      .tab:active{ transform:translateY(1px); }
 
-      /* Sections alignment */
-      section{ margin: 0 0 3.25rem; }
-      h2{
-        text-transform:uppercase; letter-spacing:.12em;
-        font-size:1rem; margin: 0 0 .85rem;
+      /* Fixed Back tab (styled like menu boxes) */
+      .back-fixed{
+        position:fixed; top:18px; left:18px; z-index:999;
       }
+      .back-fixed .tab{ padding:.55rem .9rem; }
+
+      /* Section blocks */
+      section{ margin:0 0 3.25rem; }
+      h2{ text-transform:uppercase; letter-spacing:.25em; font-size:.95rem; margin:0 0 1rem; }
       .panel{
-        background:var(--panel); border:1px solid var(--panel-br);
-        border-radius:.75rem; padding:1.15rem 1.2rem; line-height:1.6;
+        border:1px solid rgba(255,255,255,.25);
+        border-radius:.6rem;
+        background:rgba(255,255,255,.03);
+        padding:1.2rem 1.25rem;
+        line-height:1.6;
       }
 
-      /* Screenshots grid */
-      .gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:.9rem; margin-top:.85rem; }
-      .gallery img{ width:100%; height:auto; border-radius:.6rem; border:1px solid rgba(255,255,255,.12); }
+      /* Gallery (screenshots) */
+      .gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin-top:.9rem; }
+      .gallery img{ width:100%; height:auto; border-radius:.5rem; border:1px solid rgba(255,255,255,.2); }
 
-      /* Optional demo embed */
-      .embed{ position:relative; padding-top:62.5%; border:1px solid rgba(255,255,255,.12); border-radius:.75rem; overflow:hidden; background:#0b0c12; }
+      /* Demo embed (optional) */
+      .embed{ position:relative; padding-top:62.5%; overflow:hidden; border-radius:.6rem; border:1px solid rgba(255,255,255,.25); background:#0b0c12; }
       .embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
 
-      footer{ text-align:center; opacity:.75; font-size:.9rem; margin-top:2.25rem; }
+      footer{ text-align:center; opacity:.7; font-size:.85rem; margin-top:2.5rem; }
 
-      /* FIXED back/home button – top-left of viewport */
-      .back-fixed{
-        position: fixed; top: 16px; left: 16px; z-index: 1000;
+      /* Desktop alignment: match widths with header copy/tabs */
+      @media(min-width:980px){
+        #wrapper{max-width:1100px;}
+        header .subtitle, .tabs, #wrapper>section{ max-width:860px; margin-left:auto; margin-right:auto; }
       }
-      .back-fixed .btn{ padding:.45rem .85rem; font-weight:700; }
-      @media (max-width: 480px){
-        .back-fixed{ top:10px; left:10px; }
-        #wrapper{ padding-top: 5.25rem; }
-      }
-      /* --- Desktop alignment fix --- */
-@media (min-width: 980px) {
-  /* Keep a roomy page shell */
-  #wrapper { max-width: 1100px; }
-
-  /* Make each section the same inner width and center it */
-  #wrapper > section {
-    max-width: 860px;   /* tweak 820–900 to taste */
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* Optional: keep the header’s meta + buttons aligned with sections */
-  header .actions,
-  header p.meta {
-    max-width: 860px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
     </style>
   </head>
 
   <body class="is-preload">
-    <!-- Always-visible Back button (top-left) -->
+    <!-- Back tab (top-left) -->
     <div class="back-fixed">
-      <a class="btn" href="/#projects" title="Back to Home">
-        <span class="icon solid fa-arrow-left"></span><span>Back</span>
-      </a>
+      <a class="tab" href="/#projects" title="Back to Home">← Back</a>
     </div>
 
     <div id="wrapper">
+      <!-- Header mirrors home page composition -->
       <header>
         <div class="logo"><span class="icon solid fa-folder-open"></span></div>
         <h1>PROJECT TITLE</h1>
-        <p class="meta">One-line project description.</p>
-        <div class="actions">
-          <a class="btn primary" href="https://github.com/siddharthp1997/REPO_NAME" target="_blank" rel="noopener">
-            <span class="icon brands fa-github"></span><span>GitHub Repo</span>
-          </a>
-          <a class="btn" href="/" rel="noopener">Home</a>
-          <a class="btn" href="/Siddharth_Pandit.pdf" target="_blank" rel="noopener">Resume</a>
+        <p class="subtitle">DATA · ML · ANALYTICS ENGINEERING</p>
+
+        <div class="tabs">
+          <a class="tab primary" href="REPO_URL" target="_blank" rel="noopener">GitHub Repo</a>
+          <a class="tab" href="/" rel="noopener">Home</a>
+          <a class="tab" href="/Siddharth_Pandit.pdf" target="_blank" rel="noopener">Resume</a>
         </div>
       </header>
 
       <section id="about">
         <h2>About</h2>
         <div class="panel">
-          <p>Describe what this project does, the stack (Python, Spark, AWS, etc.), and key results or metrics achieved.</p>
+          <p>
+            Brief summary of the project: what it does, the stack (e.g., Python, Spark, AWS),
+            and 1–2 concrete outcomes or metrics.
+          </p>
         </div>
       </section>
 
-      <!-- Optional demo section: hidden if DEMO_URL is blank -->
+      <!-- Optional Live Demo (auto-hidden if DEMO_URL is blank) -->
       <section id="demo">
         <h2>Live Demo</h2>
         <div class="panel">
-          <div class="embed"><iframe id="demoFrame" title="Live Demo" src=""></iframe></div>
+          <div class="embed">
+            <iframe id="demoFrame" title="Live Demo" src=""></iframe>
+          </div>
           <p style="opacity:.8;margin-top:.6rem">
             If the embed doesn’t load, <a id="demoLink" href="#" target="_blank" rel="noopener">open in a new tab</a>.
           </p>
@@ -138,17 +120,18 @@
         <h2>Screenshots</h2>
         <div class="panel">
           <div id="gallery" class="gallery"></div>
-          <p style="opacity:.8;margin-top:.55rem">Place screenshots in <code>/images/PROJECT_SLUG/1.jpg</code>, <code>2.jpg</code>, etc.</p>
+          <p style="opacity:.8;margin-top:.55rem">
+            Place screenshots in <code>/images/PROJECT_SLUG/1.jpg</code>, <code>2.jpg</code>, etc.
+          </p>
         </div>
       </section>
 
       <footer>
-        &copy; <script>document.write(new Date().getFullYear())</script> Siddharth Pandit · Built with
-        <a href="https://html5up.net/dimension" target="_blank" rel="noopener">Dimension</a>.
+        &copy; <script>document.write(new Date().getFullYear())</script> Siddharth Pandit · Design: <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a>.
       </footer>
     </div>
 
-    <!-- Dimension background + scripts -->
+    <!-- Dimension background + scripts (for the glow + lines) -->
     <div id="bg"></div>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/browser.min.js"></script>
@@ -158,10 +141,10 @@
 
     <script>
       // --- CONFIG ---
-      const PROJECT_SLUG = 'PROJECT_SLUG'; // e.g., 'air-quality-dashboard'
-      const DEMO_URL     = '';             // e.g., 'https://your-streamlit-app.streamlit.app'
+      const PROJECT_SLUG = 'PROJECT_SLUG';  // e.g. 'air-quality-dashboard'
+      const DEMO_URL     = '';              // e.g. 'https://your-streamlit-app.streamlit.app'
 
-      // Load screenshots
+      // Screenshots loader
       (function(){
         const g = document.getElementById('gallery');
         for(let i=1;i<=6;i++){
@@ -174,7 +157,7 @@
         }
       })();
 
-      // Toggle demo section
+      // Demo toggler
       (function(){
         const frame = document.getElementById('demoFrame');
         const link  = document.getElementById('demoLink');
