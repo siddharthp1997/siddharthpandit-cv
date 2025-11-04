@@ -6,155 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="description" content="Project by Siddharth Pandit — Data / ML / Analytics Engineering." />
 
-    <!-- Dimension theme (works from subfolders) -->
+    <!-- Dimension theme (absolute paths so it works from subfolders) -->
     <link rel="stylesheet" href="/assets/css/main.css" />
     <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
 
     <style>
-      :root {
-        --accent: #6ee7b7;
-        --panel-bg: rgba(255,255,255,.03);
-        --panel-border: rgba(255,255,255,.12);
-        --btn-bg: rgba(255,255,255,.05);
-        --btn-border: rgba(255,255,255,.15);
+      :root{
+        --accent:#6ee7b7;
+        --panel:rgba(255,255,255,.03);
+        --panel-br:rgba(255,255,255,.12);
+        --btn-bg:rgba(255,255,255,.05);
+        --btn-br:rgba(255,255,255,.18);
+        --btn-bg-hover:rgba(255,255,255,.12);
       }
 
-      body { color: #fff; }
-      #wrapper { max-width: 900px; margin: 0 auto; padding: 5rem 1.5rem 6rem; }
+      /* Layout (keeps Dimension look while using continuous scroll) */
+      #wrapper{ max-width: 960px; margin: 0 auto; padding: 5.5rem 1.25rem 6rem; }
+      header{ text-align:center; margin-bottom: 2.75rem; }
+      .logo{ font-size: 2.9rem; color: var(--accent); margin-bottom: .6rem; }
+      header h1{ font-size: clamp(2rem, 4vw, 2.6rem); margin: .25rem 0 .35rem; }
+      header p.meta{ opacity:.85; max-width: 760px; margin: 0 auto 1.2rem; }
 
-      /* Header and Back Button */
-      header {
-        text-align: center;
-        margin-bottom: 3rem;
-        position: relative;
+      /* Pill buttons */
+      .actions{ display:flex; flex-wrap:wrap; justify-content:center; gap:.75rem; margin-top:.9rem; }
+      .btn{
+        display:inline-flex; align-items:center; gap:.5rem;
+        padding:.6rem 1.05rem; border-radius:999px;
+        background:var(--btn-bg); border:1px solid var(--btn-br);
+        color:#fff; text-decoration:none; font-weight:700; letter-spacing:.06em; font-size:.88rem;
+        transition: background .2s, transform .02s, border-color .2s, box-shadow .2s;
       }
-      .back-btn {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: inline-flex;
-        align-items: center;
-        gap: .35rem;
-        padding: .45rem .9rem;
-        font-size: .85rem;
-        border-radius: 999px;
-        background: var(--btn-bg);
-        border: 1px solid var(--btn-border);
-        color: var(--accent);
-        text-decoration: none;
-        transition: all .2s ease;
-      }
-      .back-btn:hover {
-        background: rgba(255,255,255,.12);
-        transform: translateY(-1px);
-      }
+      .btn:hover{ background:var(--btn-bg-hover); box-shadow:0 6px 18px rgba(0,0,0,.18); }
+      .btn:active{ transform: translateY(1px); }
+      .btn.primary{ color:var(--accent); border-color:var(--accent); }
+      .btn .icon{ font-size:1rem; line-height:1; }
 
-      /* Logo and Title */
-      .logo {
-        font-size: 2.75rem;
-        color: var(--accent);
-        margin-bottom: .5rem;
+      /* Sections alignment */
+      section{ margin: 0 0 3.25rem; }
+      h2{
+        text-transform:uppercase; letter-spacing:.12em;
+        font-size:1rem; margin: 0 0 .85rem;
       }
-      header h1 { font-size: clamp(2rem, 4vw, 2.6rem); margin-bottom: .35rem; }
-      header p.meta { opacity: .8; font-size: 1rem; margin-bottom: 1.25rem; }
-
-      /* Buttons */
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: .8rem;
-        margin-top: 1rem;
-      }
-      .btn {
-        background: var(--btn-bg);
-        border: 1px solid var(--btn-border);
-        border-radius: 999px;
-        padding: .6rem 1.2rem;
-        text-decoration: none;
-        color: #fff;
-        font-weight: 600;
-        letter-spacing: .05em;
-        transition: all .2s ease;
-      }
-      .btn.primary {
-        color: var(--accent);
-        border-color: var(--accent);
-      }
-      .btn:hover {
-        background: rgba(255,255,255,.12);
-        transform: translateY(-1px);
-      }
-
-      /* Sections */
-      section {
-        margin-bottom: 3.5rem;
-      }
-      h2 {
-        text-transform: uppercase;
-        letter-spacing: .12em;
-        font-size: 1rem;
-        margin-bottom: .9rem;
-      }
-      .panel {
-        background: var(--panel-bg);
-        border: 1px solid var(--panel-border);
-        border-radius: .75rem;
-        padding: 1.2rem;
-        line-height: 1.6;
+      .panel{
+        background:var(--panel); border:1px solid var(--panel-br);
+        border-radius:.75rem; padding:1.15rem 1.2rem; line-height:1.6;
       }
 
       /* Screenshots grid */
-      .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: .9rem;
-        margin-top: .9rem;
-      }
-      .gallery img {
-        width: 100%;
-        height: auto;
-        border-radius: .6rem;
-        border: 1px solid rgba(255,255,255,.1);
-      }
+      .gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:.9rem; margin-top:.85rem; }
+      .gallery img{ width:100%; height:auto; border-radius:.6rem; border:1px solid rgba(255,255,255,.12); }
 
-      /* Demo embed */
-      .embed {
-        position: relative;
-        padding-top: 62.5%;
-        border: 1px solid rgba(255,255,255,.12);
-        border-radius: .75rem;
-        overflow: hidden;
-        background: #0b0c12;
-      }
-      .embed iframe {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-      }
+      /* Optional demo embed */
+      .embed{ position:relative; padding-top:62.5%; border:1px solid rgba(255,255,255,.12); border-radius:.75rem; overflow:hidden; background:#0b0c12; }
+      .embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
 
-      footer {
-        text-align: center;
-        opacity: .7;
-        font-size: .9rem;
-        margin-top: 3rem;
+      footer{ text-align:center; opacity:.75; font-size:.9rem; margin-top:2.25rem; }
+
+      /* FIXED back/home button – top-left of viewport */
+      .back-fixed{
+        position: fixed; top: 16px; left: 16px; z-index: 1000;
+      }
+      .back-fixed .btn{ padding:.45rem .85rem; font-weight:700; }
+      @media (max-width: 480px){
+        .back-fixed{ top:10px; left:10px; }
+        #wrapper{ padding-top: 5.25rem; }
       }
     </style>
   </head>
 
   <body class="is-preload">
+    <!-- Always-visible Back button (top-left) -->
+    <div class="back-fixed">
+      <a class="btn" href="/#projects" title="Back to Home">
+        <span class="icon solid fa-arrow-left"></span><span>Back</span>
+      </a>
+    </div>
+
     <div id="wrapper">
       <header>
-        <a href="/#projects" class="back-btn"><span class="icon solid fa-arrow-left"></span>Back</a>
         <div class="logo"><span class="icon solid fa-folder-open"></span></div>
         <h1>PROJECT TITLE</h1>
         <p class="meta">One-line project description.</p>
         <div class="actions">
-          <a class="btn primary" href="https://github.com/siddharthp1997/REPO_NAME" target="_blank"><span class="icon brands fa-github"></span> GitHub Repo</a>
-          <a class="btn" href="/">Home</a>
-          <a class="btn" href="/Siddharth_Pandit.pdf" target="_blank">Resume</a>
+          <a class="btn primary" href="https://github.com/siddharthp1997/REPO_NAME" target="_blank" rel="noopener">
+            <span class="icon brands fa-github"></span><span>GitHub Repo</span>
+          </a>
+          <a class="btn" href="/" rel="noopener">Home</a>
+          <a class="btn" href="/Siddharth_Pandit.pdf" target="_blank" rel="noopener">Resume</a>
         </div>
       </header>
 
@@ -165,13 +103,12 @@
         </div>
       </section>
 
+      <!-- Optional demo section: hidden if DEMO_URL is blank -->
       <section id="demo">
         <h2>Live Demo</h2>
         <div class="panel">
-          <div class="embed">
-            <iframe id="demoFrame" src=""></iframe>
-          </div>
-          <p style="opacity:.8; margin-top:.6rem;">
+          <div class="embed"><iframe id="demoFrame" title="Live Demo" src=""></iframe></div>
+          <p style="opacity:.8;margin-top:.6rem">
             If the embed doesn’t load, <a id="demoLink" href="#" target="_blank" rel="noopener">open in a new tab</a>.
           </p>
         </div>
@@ -181,7 +118,7 @@
         <h2>Screenshots</h2>
         <div class="panel">
           <div id="gallery" class="gallery"></div>
-          <p style="opacity:.8; margin-top:.5rem;">Place screenshots in <code>/images/PROJECT_SLUG/1.jpg</code>, <code>2.jpg</code>, etc.</p>
+          <p style="opacity:.8;margin-top:.55rem">Place screenshots in <code>/images/PROJECT_SLUG/1.jpg</code>, <code>2.jpg</code>, etc.</p>
         </div>
       </section>
 
@@ -191,7 +128,7 @@
       </footer>
     </div>
 
-    <!-- Background + scripts -->
+    <!-- Dimension background + scripts -->
     <div id="bg"></div>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/browser.min.js"></script>
@@ -202,7 +139,7 @@
     <script>
       // --- CONFIG ---
       const PROJECT_SLUG = 'PROJECT_SLUG'; // e.g., 'air-quality-dashboard'
-      const DEMO_URL = '';                 // e.g., 'https://your-streamlit-app.streamlit.app'
+      const DEMO_URL     = '';             // e.g., 'https://your-streamlit-app.streamlit.app'
 
       // Load screenshots
       (function(){
@@ -217,16 +154,15 @@
         }
       })();
 
-      // Toggle demo
+      // Toggle demo section
       (function(){
         const frame = document.getElementById('demoFrame');
-        const link = document.getElementById('demoLink');
-        const section = document.getElementById('demo');
-        if(DEMO_URL){
-          frame.src = DEMO_URL;
-          link.href = DEMO_URL;
+        const link  = document.getElementById('demoLink');
+        const sec   = document.getElementById('demo');
+        if (DEMO_URL){
+          frame.src = DEMO_URL; link.href = DEMO_URL;
         } else {
-          section.style.display = 'none';
+          sec.style.display = 'none';
         }
       })();
     </script>
