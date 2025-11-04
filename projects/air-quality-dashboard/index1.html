@@ -6,46 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="description" content="Project by Siddharth Pandit — Data / ML / Analytics Engineering." />
 
-    <!-- Dimension core theme (absolute paths so it works from subfolders) -->
+    <!-- Core Dimension theme -->
     <link rel="stylesheet" href="/assets/css/main.css" />
     <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
 
     <style>
-      body { background: #0e0f14; color: #eaeaea; }
-      main { max-width: 900px; margin: 4rem auto; padding: 0 1.2rem 5rem; line-height: 1.6; }
-      header h1 { font-size: clamp(2rem, 4vw, 2.6rem); margin-bottom: 0.5rem; }
-      header p.meta { opacity: 0.8; font-size: 1rem; margin-bottom: 2rem; }
+      /* Match Dimension’s dark-glow aesthetic but as a continuous scroll page */
+      #wrapper { padding: 4rem 1.5rem 6rem; max-width: 900px; margin: 0 auto; }
+      header { text-align: center; margin-bottom: 3rem; }
+      header .logo { font-size: 3rem; color: var(--accent, #6ee7b7); margin-bottom: 0.8rem; }
+      header h1 { font-size: clamp(2rem, 4vw, 2.6rem); margin-bottom: .4rem; }
+      header p.meta { opacity: .8; }
       section { margin-bottom: 3.5rem; }
-      h2 { font-size: 1.4rem; margin-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.4rem; }
-      .panel { border:1px solid rgba(255,255,255,0.08); border-radius:.6rem; padding:1.2rem; background:rgba(255,255,255,0.02); }
-      .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:.75rem; margin-top:1rem; }
-      .gallery img { width:100%; height:auto; border-radius:.6rem; border:1px solid rgba(255,255,255,.08); }
-      .actions { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1rem; }
-      .button { background:#1a1f2f; border:1px solid #2a3045; border-radius:8px; padding:.5rem 1rem; text-decoration:none; color:#fff; }
-      .button.primary { border-color:#6ee7b7; color:#6ee7b7; }
-      footer { text-align:center; opacity:.7; margin-top:3rem; font-size:.9rem; }
+      h2 { text-transform: uppercase; letter-spacing: .08em; font-size: 1.1rem; margin-bottom: .8rem; }
+      .panel { border: 1px solid rgba(255,255,255,.08); border-radius: .6rem; padding: 1.2rem; background: rgba(255,255,255,.02); }
+      .gallery { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: .75rem; margin-top: 1rem; }
+      .gallery img { width: 100%; height: auto; border-radius: .6rem; border: 1px solid rgba(255,255,255,.08); }
+      .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1rem; }
+      .button { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.15); border-radius: 8px; padding: .5rem 1rem; text-decoration: none; color: #fff; transition: 0.2s; }
+      .button:hover { background: rgba(255,255,255,.15); }
+      .button.primary { border-color: var(--accent, #6ee7b7); color: var(--accent, #6ee7b7); }
+      .embed { position: relative; padding-top: 62.5%; border: 1px solid rgba(255,255,255,.08); border-radius: .6rem; overflow: hidden; background: #0b0c12; }
+      .embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+      footer { text-align: center; opacity: .7; margin-top: 2rem; font-size: .9rem; }
+
+      /* Fixed back/home button */
+      .back-btn {
+        position: fixed; bottom: 2rem; right: 2rem;
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(255,255,255,.15);
+        border-radius: 50%;
+        width: 2.75rem; height: 2.75rem;
+        display: flex; align-items: center; justify-content: center;
+        color: var(--accent, #6ee7b7);
+        text-decoration: none;
+        transition: 0.25s;
+        z-index: 999;
+      }
+      .back-btn:hover { background: rgba(255,255,255,.18); }
     </style>
   </head>
-  <body>
-    <header style="text-align:center; margin-top:4rem;">
-      <div class="logo" style="font-size:3rem; color:#6ee7b7;">
-        <span class="icon solid fa-folder-open"></span>
-      </div>
-      <h1>PROJECT TITLE</h1>
-      <p class="meta">One-sentence description of the project.</p>
-    </header>
+  <body class="is-preload">
+    <!-- Wrapper preserves Dimension animations -->
+    <div id="wrapper">
+      <header>
+        <div class="logo"><span class="icon solid fa-folder-open"></span></div>
+        <h1>PROJECT TITLE</h1>
+        <p class="meta">One-line project description.</p>
+        <div class="actions" style="justify-content:center;">
+          <a class="button primary" href="https://github.com/siddharthp1997/REPO_NAME" target="_blank">GitHub Repo</a>
+          <a class="button" href="/">Home</a>
+          <a class="button" href="/Siddharth_Pandit.pdf" target="_blank">Resume</a>
+        </div>
+      </header>
 
-    <main>
       <section id="about">
         <h2>About</h2>
         <div class="panel">
-          <p>
-            Short paragraph describing what the project does, technologies used,
-            and what results it achieved. For example:
-            <br><br>
-            “Built an end-to-end data platform with automated ETL (Airflow + dbt),
-            dashboards (Metabase), and scalable infrastructure using Docker & AWS.”
-          </p>
+          <p>Short paragraph describing what the project does, the technologies used, and the results achieved. Keep it brief and technical.</p>
+        </div>
+      </section>
+
+      <section id="demo">
+        <h2>Live Demo</h2>
+        <div class="panel">
+          <div class="embed">
+            <iframe id="demoFrame" src=""></iframe>
+          </div>
+          <p style="opacity:.8;margin-top:.5rem;">If the embed doesn’t load, <a id="demoLink" href="#" target="_blank" rel="noopener">open in a new tab</a>.</p>
         </div>
       </section>
 
@@ -53,29 +81,23 @@
         <h2>Screenshots</h2>
         <div class="panel">
           <div id="gallery" class="gallery"></div>
-          <p style="opacity:.8;margin-top:.5rem">
-            Place screenshots at <code>/images/PROJECT_SLUG/1.jpg</code>, <code>2.jpg</code>, etc.
-          </p>
+          <p style="opacity:.8;margin-top:.5rem">Put screenshots in <code>/images/PROJECT_SLUG/1.jpg</code>, <code>2.jpg</code>, etc.</p>
         </div>
       </section>
 
-      <section id="links">
-        <h2>Links</h2>
-        <div class="actions">
-          <a class="button primary" href="https://github.com/siddharthp1997/REPO_NAME" target="_blank" rel="noopener">GitHub Repo</a>
-          <a class="button" href="/">Home</a>
-          <a class="button" href="/Siddharth_Pandit.pdf" target="_blank" rel="noopener">Resume</a>
-          <!-- Optional: Live Demo link -->
-          <!-- <a class="button" href="https://demo.example.com" target="_blank" rel="noopener">Live Demo</a> -->
-        </div>
-      </section>
-    </main>
+      <footer>
+        &copy; <script>document.write(new Date().getFullYear())</script> Siddharth Pandit · Built with
+        <a href="https://html5up.net/dimension" target="_blank">Dimension</a>.
+      </footer>
+    </div>
 
-    <footer>
-      &copy; <script>document.write(new Date().getFullYear())</script> Siddharth Pandit. Built with <a href="https://html5up.net/dimension" target="_blank" rel="noopener">Dimension</a>.
-    </footer>
+    <!-- Fixed back/home button -->
+    <a href="/#projects" class="back-btn" title="Back to Home">
+      <span class="icon solid fa-arrow-left"></span>
+    </a>
 
-    <!-- Scripts -->
+    <!-- Dimension background & scripts -->
+    <div id="bg"></div>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/browser.min.js"></script>
     <script src="/assets/js/breakpoints.min.js"></script>
@@ -83,17 +105,31 @@
     <script src="/assets/js/main.js"></script>
 
     <script>
-      // Auto-load screenshots from /images/PROJECT_SLUG/1.jpg..6.jpg
+      const PROJECT_SLUG = 'PROJECT_SLUG';  // e.g., 'air-quality-dashboard'
+      const DEMO_URL = '';                  // e.g., 'https://your-streamlit-app.streamlit.app'
+
+      // Load screenshots
       (function(){
-        const slug = 'PROJECT_SLUG';
         const g = document.getElementById('gallery');
         for(let i=1;i<=6;i++){
           const img = new Image();
-          img.loading='lazy';
-          img.src = `/images/${slug}/${i}.jpg`;
-          img.alt = `${slug} screenshot ${i}`;
+          img.loading = 'lazy';
+          img.src = `/images/${PROJECT_SLUG}/${i}.jpg`;
+          img.alt = `${PROJECT_SLUG} screenshot ${i}`;
           img.onerror = () => img.remove();
           img.onload = () => g.appendChild(img);
+        }
+      })();
+
+      // Load demo if provided
+      (function(){
+        const frame = document.getElementById('demoFrame');
+        const link = document.getElementById('demoLink');
+        if(DEMO_URL){
+          frame.src = DEMO_URL;
+          link.href = DEMO_URL;
+        } else {
+          document.getElementById('demo').style.display = 'none';
         }
       })();
     </script>
